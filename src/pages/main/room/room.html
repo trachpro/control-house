@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-navbar center color="primary">
+    <ion-buttons end style="width: 36px; height: 36px" (click)="logout()">
+      <button style="background-color:  inherit">
+        <ion-icon name="log-out" style="font-size: 36px; color: white"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title center>
+      <p style="font-size: 20px">main</p>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    <form *ngIf="searchToggle" id="todo-form" class="ng-pristine ng-valid" >
+      <input id="new-todo" placeholder="search" class="ng-pristine ng-valid ng-touched">
+    </form>
+    <ul style="padding: 0; list-style: none" *ngIf="house">
+      <li *ngFor="let room of house.rooms" (click)="chooseRoom(room)">
+        <furni [id]="house.id" [room]="room"></furni>
+      </li>
+    </ul>
+  </ion-content>

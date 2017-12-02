@@ -1,0 +1,55 @@
+<ion-header>
+
+  <ion-navbar center color="primary">
+    <ion-buttons end style="width: 36px; height: 36px" (click)="logout()">
+      <button style="background-color:  inherit">
+        <ion-icon name="log-out" style="font-size: 36px; color: white"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title center>
+      <p style="font-size: 20px">main</p>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="background">
+  <ion-list>
+    <ion-item>
+      <ion-label>Độ ẩm</ion-label>
+      <ion-range min="10" max="100" [(ngModel)]="initParams.humi" color="primary" pin="true">
+        <ion-icon small range-left color="primary" name="thermometer"></ion-icon>
+        <ion-label range-left>10</ion-label>
+        <ion-label range-right>100</ion-label>
+        <ion-icon range-right color="primary" name="thermometer"></ion-icon>
+      </ion-range>
+    </ion-item>
+
+    <ion-item>
+
+      <ion-label> Độ sáng</ion-label>
+      <ion-range min="20" max="100" step="2" [(ngModel)]="initParams.light">
+        <ion-icon small range-left name="sunny"></ion-icon>
+        <ion-icon range-right name="sunny"></ion-icon>
+      </ion-range>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Quạt </ion-label>
+      <ion-range min="1" max="5" step="1" snaps="true" color="secondary" [(ngModel)]="initParams.fan" pin="true"></ion-range>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Cửa chính</ion-label>
+      <ion-toggle [(ngModel)]="initParams.door"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Cửa sổ</ion-label>
+      <ion-toggle [(ngModel)]="initParams.window"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tivi</ion-label>
+      <ion-toggle [(ngModel)]="initParams.tivi"></ion-toggle>
+    </ion-item>
+  </ion-list>
+</ion-content>
